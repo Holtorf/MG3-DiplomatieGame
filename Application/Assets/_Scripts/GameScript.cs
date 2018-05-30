@@ -5,36 +5,37 @@ using TMPro;
 
 public class GameScript : MonoBehaviour {
 
+	//Script References
+	public GameObject player;
+	public GameObject decks;
+	private Decks deckScript;
 
-	public static List<Card> playedCards = new List<Card>();
+	//GUI
 	public TextMeshProUGUI globalisierungText;
 	public TextMeshProUGUI technischerFortschrittText;
 	public TextMeshProUGUI umweltverschmutzungText;
 	public TextMeshProUGUI rundenAnzeigeText;
 
-	public GameObject player;
-	public GameObject decks;
-	private Decks deckScript;
+	//static
+	public static List<Card> playedCards = new List<Card>();
 
-	// Use this for initialization
 	void Start () {
-		deckScript = decks.GetComponent<Decks> ();
+		initReferences ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	void initReferences() {
+		deckScript = decks.GetComponent<Decks> ();
 	}
 
-	public void endTurn(){
-		this.playKICards ();
-		this.updateGlobalStats ();
-		this.updateGlobalStatsGui ();
-		this.updateRundenAnzeige ();
-		this.resetPlayedCards ();
+	public void endTurn() {
+		playKICards ();
+		updateGlobalStats ();
+		updateGlobalStatsGui ();
+		updateRundenAnzeige ();
+		resetPlayedCards ();
 	}
 
-	void updateGlobalStats(){
+	void updateGlobalStats() {
 		for (int i = 0; i < GameScript.playedCards.Count; i++) {
 			GameStats.globalisierung += playedCards [i].globalisierung;
 			GameStats.technischerFortschritt += playedCards [i].technischerFortschritt;
@@ -42,7 +43,7 @@ public class GameScript : MonoBehaviour {
 		}
 	}
 
-	void playKICards(){
+	void playKICards() {
 		List<Card> someDeck = deckScript.getRegierung();
 		if (someDeck.Count > 0) {
 			Card kiCard = someDeck [Random.Range (0, someDeck.Count)];
@@ -50,18 +51,18 @@ public class GameScript : MonoBehaviour {
 		}
 	}
 
-	void updateGlobalStatsGui(){
+	void updateGlobalStatsGui() {
 		globalisierungText.text = GameStats.globalisierung.ToString();
 		technischerFortschrittText.text = GameStats.technischerFortschritt.ToString();
 		umweltverschmutzungText.text = GameStats.umweltverschmutzung.ToString();
 	}
 
-	void updateRundenAnzeige(){
+	void updateRundenAnzeige() {
 		GameStats.gameRound++;
 		rundenAnzeigeText.text = "Runde: " + GameStats.gameRound.ToString();
 	}
 
-	void resetPlayedCards(){
+	void resetPlayedCards() {
 		GameScript.playedCards = new List<Card> ();
 	}
 }

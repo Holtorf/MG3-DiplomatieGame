@@ -21,6 +21,4 @@ public class Card : ScriptableObject {
 	public int geld;
 	public int ansehen;
 	public int einfluss;
-
-
 }
