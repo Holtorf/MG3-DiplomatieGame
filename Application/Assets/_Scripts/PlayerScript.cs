@@ -76,6 +76,7 @@ public class PlayerScript : MonoBehaviour {
 			GameScript.playedCards.Add (playedCard);
 			this.updateLocalStats ();
 			Destroy (playedGameObject);
+			playedCard = null;
 			cardInMid = false;
 			StartCoroutine(drawCards());
 		} else {
