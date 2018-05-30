@@ -90,14 +90,26 @@ public class PlayerScript : MonoBehaviour {
 
 	public void setPlayedCard(Card card, int index){
 		this.playedCard = card;
-		if (index == 1) {
-			position1Free = true;
-		}
-		if (index == 2) {
-			position2Free = true;
-		}
-		if (index == 3) {
-			position3Free = true;
+		if (card != null) {
+			if (index == 1) {
+				position1Free = true;
+			}
+			if (index == 2) {
+				position2Free = true;
+			}
+			if (index == 3) {
+				position3Free = true;
+			}
+		} else {
+			if (index == 1) {
+				position1Free = false;
+			}
+			if (index == 2) {
+				position2Free = false;
+			}
+			if (index == 3) {
+				position3Free = false;
+			}
 		}
 	}
 

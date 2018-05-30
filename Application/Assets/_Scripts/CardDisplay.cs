@@ -71,7 +71,7 @@ public class CardDisplay : MonoBehaviour {
 		} else if (cardToggle){
 			transform.position = initPosition;
 			transform.Translate (new Vector3 (0, 100, 0));
-			playerScript.setPlayedCard (null, 0);
+			playerScript.setPlayedCard (null, index);
 			playerScript.setCardInMid (false);
 			cardToggle = !cardToggle;
 		}
