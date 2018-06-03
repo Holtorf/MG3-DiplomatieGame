@@ -6,29 +6,56 @@ using UnityEngine.Networking;
 
 public class ParameterTests : NetworkBehaviour {
 
-    public const int maxTechValue = 100;
-    [SyncVar]
-    public int currentTechValue = 0;
+    [SyncVar(hook = "onChangedEnt")]   
+    public int currentEnt;
 
-    public Button button;
+    [SyncVar(hook = "onChangedGlo")]
+    public int currentGlo;
 
-    public RectTransform techBar;
+    [SyncVar(hook = "onChangedUmw")]
+    public int currentUmw;
+
+    public Button entButton;
+    public Button gloButton;
+    public Button umwButton;
+
+    public Text entValue;
+    public Text gloValue;
+    public Text umwValue;
 
     public void Start()
     {
-        Button btn;
-        btn = button.GetComponent<Button>();
-        btn.onClick.AddListener(increaseTechValue);
-
+        entValue.text = currentEnt.ToString();
+        gloValue.text = currentGlo.ToString();
+        umwValue.text = currentUmw.ToString();
     }
 
-    public void increaseTechValue()
+    public void increaseValue(int index)  //increase Value (Ent,Glo,Umw) with index (1,2,3)
     {
-        currentTechValue += 10;
+        if (!isServer)
+        {
+            return;
+        }
 
-        if(!isServer)
-        techBar.sizeDelta = new Vector2(currentTechValue, techBar.sizeDelta.y);
+        if (index == 1) currentEnt += 10;
+        else if (index == 2) currentGlo += 10;
+        else if (index == 3) currentUmw += 10;
+        
     }
 
-    
+    void onChangedEnt(int ent)
+    {
+        entValue.text = ent.ToString();
+    }
+
+    void onChangedGlo(int glo)
+    {
+        gloValue.text = glo.ToString();
+    }
+
+    void onChangedUmw(int umw)
+    {
+        umwValue.text = umw.ToString();
+    }
+
 }
