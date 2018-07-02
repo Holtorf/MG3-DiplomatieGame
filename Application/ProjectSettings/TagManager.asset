@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Card
   - 
   - 
   - 
@@ -43,6 +43,21 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2010231071
+    locked: 0
+  - name: Kuppel
+    uniqueID: 1059669017
+    locked: 0
+  - name: Umweltverschmutzung
+    uniqueID: 2393002733
+    locked: 0
+  - name: TechnischerFortschritt
+    uniqueID: 2919956149
+    locked: 0
+  - name: Globalisierung
+    uniqueID: 1036547603
+    locked: 0
+  - name: LokaleVariablen
+    uniqueID: 967281879
     locked: 0
   - name: Card
     uniqueID: 1347420999

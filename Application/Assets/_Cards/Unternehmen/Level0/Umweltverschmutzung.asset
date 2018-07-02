@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58a0c1ab31ce45cea74f2d4c59c6bf0, type: 3}
+  m_Name: Umweltverschmutzung
+  m_EditorClassIdentifier: 
+  cardName: Umweltverschmutzung
+  description: Strom aus umweltfreundlichen Quellen beziehen
+  artwork: {fileID: 21300000, guid: 508732ed4df9d4161ada45bcb24ee90a, type: 3}
+  vorraussetzungGeld: 0
+  vorraussetzungEinfluss: 0
+  vorraussetzungAnsehen: 0
+  level: 0
+  fraktion: 1
+  technischerFortschritt: 0
+  globalisierung: 0
+  umweltverschmutzung: 1
+  geld: 0
+  ansehen: 0
+  einfluss: 0
