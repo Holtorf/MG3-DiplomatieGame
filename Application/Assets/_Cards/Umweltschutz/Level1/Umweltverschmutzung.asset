@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58a0c1ab31ce45cea74f2d4c59c6bf0, type: 3}
+  m_Name: Umweltverschmutzung
+  m_EditorClassIdentifier: 
+  cardName: "M\xFCllsammelaktion"
+  description: "Zu einer M\xFCllsammelaktion aufrufen"
+  artwork: {fileID: 0}
+  vorraussetzungGeld: 3
+  vorraussetzungEinfluss: 0
+  vorraussetzungAnsehen: 3
+  vorraussetzungGlobalisierung: 0
+  vorraussetzungUmweltverschmutzung: 0
+  vorraussetzungTechnischerFortschritt: 0
+  level: 1
+  fraktion: 2
+  technischerFortschritt: 0
+  globalisierung: 0
+  umweltverschmutzung: -3
+  geld: -1
+  ansehen: 0
+  einfluss: 0

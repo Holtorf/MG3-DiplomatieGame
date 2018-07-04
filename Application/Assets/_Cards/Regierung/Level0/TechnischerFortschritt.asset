@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58a0c1ab31ce45cea74f2d4c59c6bf0, type: 3}
   m_Name: TechnischerFortschritt
   m_EditorClassIdentifier: 
-  cardName: Technischer Fortschritt
+  cardName: "F\xF6rderungen zusagen"
   description: "Der Forschung neue F\xF6rderungen zusagen"
   artwork: {fileID: 21300000, guid: 624b0ec01113c4adb9fa5bf1ba230054, type: 3}
   vorraussetzungGeld: 0

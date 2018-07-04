@@ -12,6 +12,9 @@ public class Card : ScriptableObject {
 	public int vorraussetzungGeld;
 	public int vorraussetzungEinfluss;
 	public int vorraussetzungAnsehen;
+	public int vorraussetzungGlobalisierung;
+	public int vorraussetzungUmweltverschmutzung;
+	public int vorraussetzungTechnischerFortschritt;
 
 	public int level;
 	public PlayerManager.Fraktion fraktion;

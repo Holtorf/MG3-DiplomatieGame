@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58a0c1ab31ce45cea74f2d4c59c6bf0, type: 3}
   m_Name: Geld
   m_EditorClassIdentifier: 
-  cardName: Geld
+  cardName: Steuereinnahmen
   description: Steuereinnahmen kassieren
   artwork: {fileID: 21300000, guid: 8d17f98713b3a49b0933936f4844003e, type: 3}
   vorraussetzungGeld: 0

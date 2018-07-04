@@ -54,9 +54,28 @@ public class GlobalManager : MonoBehaviour {
 	}
 
 	void playKICards() {
-		List<Card> someDeck = decks.getPlayerDeck0 (PlayerManager.Fraktion.Unternehmen);
-		if (someDeck.Count > 0) {
-			Card randomCard = someDeck [Random.Range (0, someDeck.Count)];
+		List<Card> unternehmenDeck = decks.getPlayerDeck0 (PlayerManager.Fraktion.Unternehmen);
+		unternehmenDeck.AddRange(decks.getPlayerDeck1 (PlayerManager.Fraktion.Unternehmen));
+		List<Card> forschungsinstDeck = decks.getPlayerDeck0 (PlayerManager.Fraktion.Forschungsinstitut);
+		forschungsinstDeck.AddRange(decks.getPlayerDeck1 (PlayerManager.Fraktion.Forschungsinstitut));
+		List<Card> umweltschutzDeck = decks.getPlayerDeck0 (PlayerManager.Fraktion.Umweltschutz);
+		umweltschutzDeck.AddRange(decks.getPlayerDeck1 (PlayerManager.Fraktion.Umweltschutz));
+		if (unternehmenDeck.Count > 0) {
+			Card randomCard = unternehmenDeck [Random.Range (0, unternehmenDeck.Count)];
+			kiCard = Instantiate (cardPrefab) as GameObject;
+			kiCard.SetActive (false);
+			kiCard.GetComponent<CardScript> ().setCard (randomCard);
+			playedCards.Add (kiCard.GetComponent<CardScript>());
+		}
+		if (forschungsinstDeck.Count > 0) {
+			Card randomCard = forschungsinstDeck [Random.Range (0, forschungsinstDeck.Count)];
+			kiCard = Instantiate (cardPrefab) as GameObject;
+			kiCard.SetActive (false);
+			kiCard.GetComponent<CardScript> ().setCard (randomCard);
+			playedCards.Add (kiCard.GetComponent<CardScript>());
+		}
+		if (umweltschutzDeck.Count > 0) {
+			Card randomCard = umweltschutzDeck [Random.Range (0, umweltschutzDeck.Count)];
 			kiCard = Instantiate (cardPrefab) as GameObject;
 			kiCard.SetActive (false);
 			kiCard.GetComponent<CardScript> ().setCard (randomCard);
@@ -136,16 +155,16 @@ public class GlobalManager : MonoBehaviour {
 			gewonnenFraktion.text = "Regierung";
 			gewonnenPanel.SetActive (true);
 		}
-		if (PlayerManager.geld >= 8 && PlayerManager.einfluss >= 8){
-			gewonnenFraktion.text = "Unternehmen";
-			gewonnenPanel.SetActive (true);
-		}
-		if (GlobalManager.umweltverschmutzung <= 2 && PlayerManager.geld >= 8){
-			print ("Umweltschutzorganisation gewinnt");
-		}
-		if (GlobalManager.technischerFortschritt >= 8 && PlayerManager.ansehen >= 8){
-			print ("Forschungsinstitut gewinnt");
-		}
+//		if (PlayerManager.geld >= 8 && PlayerManager.einfluss >= 8){
+//			gewonnenFraktion.text = "Unternehmen";
+//			gewonnenPanel.SetActive (true);
+//		}
+//		if (GlobalManager.umweltverschmutzung <= 2 && PlayerManager.geld >= 8){
+//			print ("Umweltschutzorganisation gewinnt");
+//		}
+//		if (GlobalManager.technischerFortschritt >= 8 && PlayerManager.ansehen >= 8){
+//			print ("Forschungsinstitut gewinnt");
+//		}
 	}
 
 

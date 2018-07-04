@@ -6,8 +6,10 @@ public class Decks : MonoBehaviour {
 
 	public List<Card> regierung0;
 	public List<Card> regierung1;
-	public List<Card> forschungsinstitut;
-	public List<Card> umweltschutz;
+	public List<Card> forschungsinstitut0;
+	public List<Card> forschungsinstitut1;
+	public List<Card> umweltschutz0;
+	public List<Card> umweltschutz1;
 	public List<Card> unternehmen0;
 	public List<Card> unternehmen1;
 
@@ -16,9 +18,9 @@ public class Decks : MonoBehaviour {
 		case PlayerManager.Fraktion.Regierung:
 			return regierung0;
 		case PlayerManager.Fraktion.Forschungsinstitut:
-			return forschungsinstitut;
+			return forschungsinstitut0;
 		case PlayerManager.Fraktion.Umweltschutz:
-			return umweltschutz;
+			return umweltschutz0;
 		case PlayerManager.Fraktion.Unternehmen:
 			return unternehmen0;
 		default:
@@ -31,9 +33,9 @@ public class Decks : MonoBehaviour {
 		case PlayerManager.Fraktion.Regierung:
 			return regierung1;
 		case PlayerManager.Fraktion.Forschungsinstitut:
-			return forschungsinstitut;
+			return forschungsinstitut1;
 		case PlayerManager.Fraktion.Umweltschutz:
-			return umweltschutz;
+			return umweltschutz1;
 		case PlayerManager.Fraktion.Unternehmen:
 			return unternehmen1;
 		default:
